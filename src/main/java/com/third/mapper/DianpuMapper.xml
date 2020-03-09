@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.third.mapper.DianpuMapper">
+    <resultMap id="BaseResultMap" type="com.third.pojo.Dianpu">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="sname" property="sname" jdbcType="VARCHAR"/>
+        <result column="sale" property="sale" jdbcType="INTEGER"/>
+        <result column="simg" property="simg" jdbcType="VARCHAR"/>
+        <result column="score" property="score" jdbcType="DOUBLE"/>
+        <result column="minprice" property="minprice" jdbcType="DOUBLE"/>
+        <result column="dispatch" property="dispatch" jdbcType="DOUBLE"/>
+        <result column="distance" property="distance" jdbcType="DOUBLE"/>
+        <result column="time" property="time" jdbcType="INTEGER"/>
+        <result column="bgimg" property="bgimg" jdbcType="VARCHAR"/>
+        <result column="banner" property="banner" jdbcType="VARCHAR"/>
+        <result column="jtitle" property="jtitle" jdbcType="VARCHAR"/>
+        <result column="title" property="title" jdbcType="DOUBLE"/>
+        <result column="main" property="main" jdbcType="VARCHAR"/>
+        <result column="num" property="num" jdbcType="INTEGER"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        id, sname, sale, simg, score, minprice, dispatch, distance, time, bgimg, banner,
+        jtitle, title, main, num
+    </sql>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.third.pojo.DianpuExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from dianpu
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from dianpu
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from dianpu
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByExample" parameterType="com.third.pojo.DianpuExample">
+        delete from dianpu
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.third.pojo.Dianpu">
+        insert into dianpu (id, sname, sale,
+        simg, score, minprice,
+        dispatch, distance, time,
+        bgimg, banner, jtitle,
+        title, main, num)
+        values (#{id,jdbcType=INTEGER}, #{sname,jdbcType=VARCHAR}, #{sale,jdbcType=INTEGER},
+        #{simg,jdbcType=VARCHAR}, #{score,jdbcType=DOUBLE}, #{minprice,jdbcType=DOUBLE},
+        #{dispatch,jdbcType=DOUBLE}, #{distance,jdbcType=DOUBLE}, #{time,jdbcType=INTEGER},
+        #{bgimg,jdbcType=VARCHAR}, #{banner,jdbcType=VARCHAR}, #{jtitle,jdbcType=VARCHAR},
+        #{title,jdbcType=DOUBLE}, #{main,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER})
+    </insert>
+    <insert id="insertSelective" parameterType="com.third.pojo.Dianpu">
+        insert into dianpu
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="sname != null">
+                sname,
+            </if>
+            <if test="sale != null">
+                sale,
+            </if>
+            <if test="simg != null">
+                simg,
+            </if>
+            <if test="score != null">
+                score,
+            </if>
+            <if test="minprice != null">
+                minprice,
+            </if>
+            <if test="dispatch != null">
+                dispatch,
+            </if>
+            <if test="distance != null">
+                distance,
+            </if>
+            <if test="time != null">
+                time,
+            </if>
+            <if test="bgimg != null">
+                bgimg,
+            </if>
+            <if test="banner != null">
+                banner,
+            </if>
+            <if test="jtitle != null">
+                jtitle,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="main != null">
+                main,
+            </if>
+            <if test="num != null">
+                num,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="sname != null">
+                #{sname,jdbcType=VARCHAR},
+            </if>
+            <if test="sale != null">
+                #{sale,jdbcType=INTEGER},
+            </if>
+            <if test="simg != null">
+                #{simg,jdbcType=VARCHAR},
+            </if>
+            <if test="score != null">
+                #{score,jdbcType=DOUBLE},
+            </if>
+            <if test="minprice != null">
+                #{minprice,jdbcType=DOUBLE},
+            </if>
+            <if test="dispatch != null">
+                #{dispatch,jdbcType=DOUBLE},
+            </if>
+            <if test="distance != null">
+                #{distance,jdbcType=DOUBLE},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=INTEGER},
+            </if>
+            <if test="bgimg != null">
+                #{bgimg,jdbcType=VARCHAR},
+            </if>
+            <if test="banner != null">
+                #{banner,jdbcType=VARCHAR},
+            </if>
+            <if test="jtitle != null">
+                #{jtitle,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=DOUBLE},
+            </if>
+            <if test="main != null">
+                #{main,jdbcType=VARCHAR},
+            </if>
+            <if test="num != null">
+                #{num,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.third.pojo.DianpuExample" resultType="java.lang.Integer">
+        select count(*) from dianpu
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update dianpu
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.sname != null">
+                sname = #{record.sname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.sale != null">
+                sale = #{record.sale,jdbcType=INTEGER},
+            </if>
+            <if test="record.simg != null">
+                simg = #{record.simg,jdbcType=VARCHAR},
+            </if>
+            <if test="record.score != null">
+                score = #{record.score,jdbcType=DOUBLE},
+            </if>
+            <if test="record.minprice != null">
+                minprice = #{record.minprice,jdbcType=DOUBLE},
+            </if>
+            <if test="record.dispatch != null">
+                dispatch = #{record.dispatch,jdbcType=DOUBLE},
+            </if>
+            <if test="record.distance != null">
+                distance = #{record.distance,jdbcType=DOUBLE},
+            </if>
+            <if test="record.time != null">
+                time = #{record.time,jdbcType=INTEGER},
+            </if>
+            <if test="record.bgimg != null">
+                bgimg = #{record.bgimg,jdbcType=VARCHAR},
+            </if>
+            <if test="record.banner != null">
+                banner = #{record.banner,jdbcType=VARCHAR},
+            </if>
+            <if test="record.jtitle != null">
+                jtitle = #{record.jtitle,jdbcType=VARCHAR},
+            </if>
+            <if test="record.title != null">
+                title = #{record.title,jdbcType=DOUBLE},
+            </if>
+            <if test="record.main != null">
+                main = #{record.main,jdbcType=VARCHAR},
+            </if>
+            <if test="record.num != null">
+                num = #{record.num,jdbcType=INTEGER},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update dianpu
+        set id = #{record.id,jdbcType=INTEGER},
+        sname = #{record.sname,jdbcType=VARCHAR},
+        sale = #{record.sale,jdbcType=INTEGER},
+        simg = #{record.simg,jdbcType=VARCHAR},
+        score = #{record.score,jdbcType=DOUBLE},
+        minprice = #{record.minprice,jdbcType=DOUBLE},
+        dispatch = #{record.dispatch,jdbcType=DOUBLE},
+        distance = #{record.distance,jdbcType=DOUBLE},
+        time = #{record.time,jdbcType=INTEGER},
+        bgimg = #{record.bgimg,jdbcType=VARCHAR},
+        banner = #{record.banner,jdbcType=VARCHAR},
+        jtitle = #{record.jtitle,jdbcType=VARCHAR},
+        title = #{record.title,jdbcType=DOUBLE},
+        main = #{record.main,jdbcType=VARCHAR},
+        num = #{record.num,jdbcType=INTEGER}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.third.pojo.Dianpu">
+        update dianpu
+        <set>
+            <if test="sname != null">
+                sname = #{sname,jdbcType=VARCHAR},
+            </if>
+            <if test="sale != null">
+                sale = #{sale,jdbcType=INTEGER},
+            </if>
+            <if test="simg != null">
+                simg = #{simg,jdbcType=VARCHAR},
+            </if>
+            <if test="score != null">
+                score = #{score,jdbcType=DOUBLE},
+            </if>
+            <if test="minprice != null">
+                minprice = #{minprice,jdbcType=DOUBLE},
+            </if>
+            <if test="dispatch != null">
+                dispatch = #{dispatch,jdbcType=DOUBLE},
+            </if>
+            <if test="distance != null">
+                distance = #{distance,jdbcType=DOUBLE},
+            </if>
+            <if test="time != null">
+                time = #{time,jdbcType=INTEGER},
+            </if>
+            <if test="bgimg != null">
+                bgimg = #{bgimg,jdbcType=VARCHAR},
+            </if>
+            <if test="banner != null">
+                banner = #{banner,jdbcType=VARCHAR},
+            </if>
+            <if test="jtitle != null">
+                jtitle = #{jtitle,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null">
+                title = #{title,jdbcType=DOUBLE},
+            </if>
+            <if test="main != null">
+                main = #{main,jdbcType=VARCHAR},
+            </if>
+            <if test="num != null">
+                num = #{num,jdbcType=INTEGER},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.third.pojo.Dianpu">
+        update dianpu
+        set sname = #{sname,jdbcType=VARCHAR},
+        sale = #{sale,jdbcType=INTEGER},
+        simg = #{simg,jdbcType=VARCHAR},
+        score = #{score,jdbcType=DOUBLE},
+        minprice = #{minprice,jdbcType=DOUBLE},
+        dispatch = #{dispatch,jdbcType=DOUBLE},
+        distance = #{distance,jdbcType=DOUBLE},
+        time = #{time,jdbcType=INTEGER},
+        bgimg = #{bgimg,jdbcType=VARCHAR},
+        banner = #{banner,jdbcType=VARCHAR},
+        jtitle = #{jtitle,jdbcType=VARCHAR},
+        title = #{title,jdbcType=DOUBLE},
+        main = #{main,jdbcType=VARCHAR},
+        num = #{num,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

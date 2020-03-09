@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.third.mapper.ProductMapper">
+    <resultMap id="BaseResultMap" type="com.third.pojo.Product">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="did" property="did" jdbcType="INTEGER"/>
+        <result column="pname" property="pname" jdbcType="VARCHAR"/>
+        <result column="pimg" property="pimg" jdbcType="VARCHAR"/>
+        <result column="price" property="price" jdbcType="DOUBLE"/>
+        <result column="sort" property="sort" jdbcType="VARCHAR"/>
+        <result column="dosing" property="dosing" jdbcType="VARCHAR"/>
+        <result column="dprice" property="dprice" jdbcType="DOUBLE"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        id, did, pname, pimg, price, sort, dosing, dprice
+    </sql>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.third.pojo.ProductExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from product
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from product
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from product
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByExample" parameterType="com.third.pojo.ProductExample">
+        delete from product
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.third.pojo.Product">
+        insert into product (id, did, pname,
+        pimg, price, sort, dosing,
+        dprice)
+        values (#{id,jdbcType=INTEGER}, #{did,jdbcType=INTEGER}, #{pname,jdbcType=VARCHAR},
+        #{pimg,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, #{sort,jdbcType=VARCHAR}, #{dosing,jdbcType=VARCHAR},
+        #{dprice,jdbcType=DOUBLE})
+    </insert>
+    <insert id="insertSelective" parameterType="com.third.pojo.Product">
+        insert into product
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="did != null">
+                did,
+            </if>
+            <if test="pname != null">
+                pname,
+            </if>
+            <if test="pimg != null">
+                pimg,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="dosing != null">
+                dosing,
+            </if>
+            <if test="dprice != null">
+                dprice,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="did != null">
+                #{did,jdbcType=INTEGER},
+            </if>
+            <if test="pname != null">
+                #{pname,jdbcType=VARCHAR},
+            </if>
+            <if test="pimg != null">
+                #{pimg,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="sort != null">
+                #{sort,jdbcType=VARCHAR},
+            </if>
+            <if test="dosing != null">
+                #{dosing,jdbcType=VARCHAR},
+            </if>
+            <if test="dprice != null">
+                #{dprice,jdbcType=DOUBLE},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.third.pojo.ProductExample" resultType="java.lang.Integer">
+        select count(*) from product
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update product
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.did != null">
+                did = #{record.did,jdbcType=INTEGER},
+            </if>
+            <if test="record.pname != null">
+                pname = #{record.pname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.pimg != null">
+                pimg = #{record.pimg,jdbcType=VARCHAR},
+            </if>
+            <if test="record.price != null">
+                price = #{record.price,jdbcType=DOUBLE},
+            </if>
+            <if test="record.sort != null">
+                sort = #{record.sort,jdbcType=VARCHAR},
+            </if>
+            <if test="record.dosing != null">
+                dosing = #{record.dosing,jdbcType=VARCHAR},
+            </if>
+            <if test="record.dprice != null">
+                dprice = #{record.dprice,jdbcType=DOUBLE},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update product
+        set id = #{record.id,jdbcType=INTEGER},
+        did = #{record.did,jdbcType=INTEGER},
+        pname = #{record.pname,jdbcType=VARCHAR},
+        pimg = #{record.pimg,jdbcType=VARCHAR},
+        price = #{record.price,jdbcType=DOUBLE},
+        sort = #{record.sort,jdbcType=VARCHAR},
+        dosing = #{record.dosing,jdbcType=VARCHAR},
+        dprice = #{record.dprice,jdbcType=DOUBLE}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.third.pojo.Product">
+        update product
+        <set>
+            <if test="did != null">
+                did = #{did,jdbcType=INTEGER},
+            </if>
+            <if test="pname != null">
+                pname = #{pname,jdbcType=VARCHAR},
+            </if>
+            <if test="pimg != null">
+                pimg = #{pimg,jdbcType=VARCHAR},
+            </if>
+            <if test="price != null">
+                price = #{price,jdbcType=DOUBLE},
+            </if>
+            <if test="sort != null">
+                sort = #{sort,jdbcType=VARCHAR},
+            </if>
+            <if test="dosing != null">
+                dosing = #{dosing,jdbcType=VARCHAR},
+            </if>
+            <if test="dprice != null">
+                dprice = #{dprice,jdbcType=DOUBLE},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.third.pojo.Product">
+        update product
+        set did = #{did,jdbcType=INTEGER},
+        pname = #{pname,jdbcType=VARCHAR},
+        pimg = #{pimg,jdbcType=VARCHAR},
+        price = #{price,jdbcType=DOUBLE},
+        sort = #{sort,jdbcType=VARCHAR},
+        dosing = #{dosing,jdbcType=VARCHAR},
+        dprice = #{dprice,jdbcType=DOUBLE}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

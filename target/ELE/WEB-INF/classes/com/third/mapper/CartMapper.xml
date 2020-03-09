@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.third.mapper.CartMapper">
+    <resultMap id="BaseResultMap" type="com.third.pojo.Cart">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="uid" property="uid" jdbcType="INTEGER"/>
+        <result column="pid" property="pid" jdbcType="INTEGER"/>
+        <result column="count" property="count" jdbcType="INTEGER"/>
+        <result column="sum" property="sum" jdbcType="DOUBLE"/>
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" suffix=")" prefixOverrides="and">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")"
+                                             separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        id, uid, pid, count, sum
+    </sql>
+    <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.third.pojo.CartExample">
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List"/>
+        from cart
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from cart
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from cart
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <delete id="deleteByExample" parameterType="com.third.pojo.CartExample">
+        delete from cart
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.third.pojo.Cart">
+        insert into cart (uid, pid,
+        count, sum)
+        values ( #{uid,jdbcType=INTEGER}, #{pid,jdbcType=INTEGER},
+        #{count,jdbcType=INTEGER}, #{sum,jdbcType=DOUBLE})
+    </insert>
+    <insert id="insertSelective" parameterType="com.third.pojo.Cart">
+        insert into cart
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="uid != null">
+                uid,
+            </if>
+            <if test="pid != null">
+                pid,
+            </if>
+            <if test="count != null">
+                count,
+            </if>
+            <if test="sum != null">
+                sum,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="uid != null">
+                #{uid,jdbcType=INTEGER},
+            </if>
+            <if test="pid != null">
+                #{pid,jdbcType=INTEGER},
+            </if>
+            <if test="count != null">
+                #{count,jdbcType=INTEGER},
+            </if>
+            <if test="sum != null">
+                #{sum,jdbcType=DOUBLE},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.third.pojo.CartExample" resultType="java.lang.Integer">
+        select count(*) from cart
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause"/>
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        update cart
+        <set>
+            <if test="record.id != null">
+                id = #{record.id,jdbcType=INTEGER},
+            </if>
+            <if test="record.uid != null">
+                uid = #{record.uid,jdbcType=INTEGER},
+            </if>
+            <if test="record.pid != null">
+                pid = #{record.pid,jdbcType=INTEGER},
+            </if>
+            <if test="record.count != null">
+                count = #{record.count,jdbcType=INTEGER},
+            </if>
+            <if test="record.sum != null">
+                sum = #{record.sum,jdbcType=DOUBLE},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        update cart
+        set id = #{record.id,jdbcType=INTEGER},
+        uid = #{record.uid,jdbcType=INTEGER},
+        pid = #{record.pid,jdbcType=INTEGER},
+        count = #{record.count,jdbcType=INTEGER},
+        sum = #{record.sum,jdbcType=DOUBLE}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause"/>
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.third.pojo.Cart">
+        update cart
+        <set>
+            <if test="uid != null">
+                uid = #{uid,jdbcType=INTEGER},
+            </if>
+            <if test="pid != null">
+                pid = #{pid,jdbcType=INTEGER},
+            </if>
+            <if test="count != null">
+                count = #{count,jdbcType=INTEGER},
+            </if>
+            <if test="sum != null">
+                sum = #{sum,jdbcType=DOUBLE},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.third.pojo.Cart">
+        update cart
+        set uid = #{uid,jdbcType=INTEGER},
+        pid = #{pid,jdbcType=INTEGER},
+        count = #{count,jdbcType=INTEGER},
+        sum = #{sum,jdbcType=DOUBLE}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <resultMap id="qq" type="com.third.Vo.CartandProductVo">
+        <id column="id" property="id"></id>
+        <result column="uid" property="uid"></result>
+        <result column="count" property="count"></result>
+        <result column="sum" property="sum"></result>
+        <!--订单和商品：一对多-->
+        <collection property="" ofType="com.third.pojo.Product">
+            <id column="_id" property="id"></id>
+            <result column="pimg" property="pimg"></result>
+            <result column="pname" property="pname"></result>
+            <result column="price" property="price"></result>
+        </collection>
+    </resultMap>
+    <select id="findCarts" resultMap="qq">
+        SELECT
+        cart.id,
+        product.id _id,
+        product.pimg,
+        product.pname,
+        product.price,
+        cart.uid,
+        cart.count,
+        cart.sum
+        FROM cart,product
+        WHERE product.id=cart.pid
+        and uid=#{uid}
+    </select>
+
+    <!--清空购物车-->
+    <delete id="clear" parameterType="java.lang.Integer">
+        delete from cart
+        where uid = #{uid}
+    </delete>
+</mapper>

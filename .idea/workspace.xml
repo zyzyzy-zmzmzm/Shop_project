@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ELE:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="407533af-8d47-49c2-97b3-d8fdec31e94b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/ELE.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/Vo/CartandProductVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/controller/CartAcontroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/CartMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/CartMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/DianpuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/DianpuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/OrderMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/CartExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/Dianpu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/DianpuExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/OrderExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/ProductExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/pojo/UserExample.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/service/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/third/service/Impl/CartserviceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/springmvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/Cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/META-INF/ELE.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/Vo/CartandProductVo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/controller/CartAcontroller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/CartMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/CartMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/DianpuMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/DianpuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/OrderMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/OrderMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/ProductMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/Cart.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/CartExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/CartExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/CartExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/CartExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/Dianpu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/DianpuExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/DianpuExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/DianpuExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/DianpuExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/Order.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/OrderExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/OrderExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/OrderExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/OrderExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/ProductExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/ProductExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/ProductExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/ProductExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/UserExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/UserExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/pojo/UserExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/service/CartService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/com/third/service/Impl/CartserviceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/classes/springmvc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/jsp/Cart.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/aopalliance-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/aspectjweaver-1.8.7.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/commons-io-1.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/commons-lang3-3.3.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/commons-net-3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/druid-1.0.9.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/jackson-annotations-2.4.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/jackson-core-2.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/jackson-databind-2.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/joda-time-2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/log4j-1.2.16.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/mybatis-3.2.8.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/mybatis-paginator-1.2.15.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/mybatis-spring-1.2.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/mysql-connector-java-5.1.32.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/pagehelper-3.4.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/slf4j-api-1.6.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/slf4j-log4j12-1.6.4.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-aop-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-aspects-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-beans-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-context-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-context-support-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-core-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-expression-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-jdbc-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-tx-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-web-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/lib/spring-webmvc-4.2.4.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/ELE/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/ELE.kotlin_module" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/SqlMapConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/Vo/CartandProductVo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/controller/CartAcontroller.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/CartMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/CartMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/DianpuMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/DianpuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/OrderMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/OrderMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/ProductMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/ProductMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/UserMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/Cart.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/CartExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/CartExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/CartExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/CartExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/Dianpu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/DianpuExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/DianpuExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/DianpuExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/DianpuExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/Order.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/OrderExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/OrderExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/OrderExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/OrderExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/ProductExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/ProductExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/ProductExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/ProductExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/UserExample$Criteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/UserExample$Criterion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/UserExample$GeneratedCriteria.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/pojo/UserExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/service/CartService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/third/service/Impl/CartserviceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/springmvc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\Zhaoyu\ELE\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" value="p" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Uj0FrGUc70GWwf66aiTLMkCFwg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="Shelf.Project.Settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Zhaoyu\ELE\src\main\webapp\WEB-INF\jsp" />
+      <recent name="D:\Zhaoyu\ELE\src\main\java\com\third\mapper" />
+      <recent name="D:\Zhaoyu\ELE\src\main\java\com\third\pojo" />
+      <recent name="D:\IdeaProjects\ELE\src\main\java\com\third\pojo" />
+      <recent name="D:\IdeaProjects\ELE\src\main\java\com\third\mapper" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat-9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat-9.0.21" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="ELE:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_ELE" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62466" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="ELE:war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="407533af-8d47-49c2-97b3-d8fdec31e94b" name="Default Changelist" comment="" />
+      <created>1575854596429</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575854596429</updated>
+      <workItem from="1575854600930" duration="4796000" />
+      <workItem from="1575861913599" duration="830000" />
+      <workItem from="1575862895022" duration="45802000" />
+      <workItem from="1575961419310" duration="39729000" />
+      <workItem from="1576058435943" duration="6221000" />
+      <workItem from="1576114787228" duration="15264000" />
+      <workItem from="1576225568406" duration="18112000" />
+      <workItem from="1576311887871" duration="1659000" />
+      <workItem from="1576475221777" duration="230000" />
+      <workItem from="1576499035225" duration="1662000" />
+      <workItem from="1576542987111" duration="118000" />
+      <workItem from="1583761286789" duration="296000" />
+    </task>
+    <task id="LOCAL-00001">
+      <created>1583761579862</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583761579862</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="368" y="3" key="CommitChangelistDialog2" timestamp="1583761653118">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="368" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583761653118" />
+  </component>
+</project>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                        http://www.springframework.org/schema/aop
+                        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+                        http://www.springframework.org/schema/context
+                        http://www.springframework.org/schema/context/spring-context-4.2.xsd
+                        http://www.springframework.org/schema/tx
+                        http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+    <!--引入jdbc配置文件-->
+    <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
+    <!--创建数据源-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="username" value="${jdbc.username}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+    </bean>
+    <!--spring负责创建会话工厂对象SqlSessionFactory,创建该对象的时候需要加载SqlMapConfig.xml
+    数据源在该文件定义的，因为现在是spring创建数据源，所以需要把数据源注入给SqlSessionFactoryBean-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--创建会话工厂对象需要数据源-->
+        <property name="dataSource" ref="dataSource"></property>
+        <!--指定mybatis的全局配置文件的路径和名称，创建会话工厂对象的同时会加载该文件-->
+        <property name="configLocation" value="classpath:SqlMapConfig.xml"></property>
+    </bean>
+    <!--spring负责创建Mapper接口的代理对象，因为spring实现了aop-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.third.mapper"></property>
+    </bean>
+    <!--对于service的对象由spring来创建(扫描注解)-->
+    <context:component-scan base-package="com.third.service"></context:component-scan>
+    <!--spring 对事务的管理-->
+    <!--创建事务管理器对象-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <tx:advice transaction-manager="transactionManager" id="aspeceId">
+        <tx:attributes>
+            <tx:method name="add*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="save*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="upd*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="find*" propagation="REQUIRED" isolation="DEFAULT"/>
+            <tx:method name="del*" propagation="SUPPORTS" isolation="DEFAULT"/>
+            <tx:method name="sel*" propagation="SUPPORTS" isolation="DEFAULT"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:advisor advice-ref="aspeceId" pointcut="execution(* com.third.service..*.*(..))"></aop:advisor>
+    </aop:config>
+</beans>
